@@ -7,21 +7,20 @@ from src.users_func import select_values_and_create_new_json
 from src.books_func import sort_books
 
 
-
-# # Select from users needed values and make a new list
-# input_file_json = JSON_FILE_PATH
+# Select from users needed values and make a new list
+input_file_json = JSON_FILE_PATH
 file_output_users = "output_users.json"
-# selected_keys_users = ["name", "gender", "address", "age", "address"]
-#
-# select_values_and_create_new_json(input_file_json, file_output_users, selected_keys_users)
-#
-#
-# # Convert books to json
-# input_file_csv = CSV_FILE_PATH
+selected_keys_users = ["name", "gender", "address", "age", "address"]
+
+select_values_and_create_new_json(input_file_json, file_output_users, selected_keys_users)
+
+# Convert books to json
+
+input_file_csv = CSV_FILE_PATH
 file_output_books = "output_books.json"
-# selected_keys_books = ["Title", "Author", "Pages", "Genre"]
-#
-# sort_books(input_file_csv, file_output_books, selected_keys_books)
+selected_keys_books = ["Title", "Author", "Pages", "Genre"]
+
+sort_books(input_file_csv, file_output_books, selected_keys_books)
 
 with open(file_output_users, 'r') as users_file:
     users_data = json.load(users_file)
