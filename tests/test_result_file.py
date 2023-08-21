@@ -1,4 +1,3 @@
-import csv
 import json
 import pytest
 
@@ -10,7 +9,8 @@ from result import RESULT_FILE_PATH
 def test_users_count():
     with open(JSON_FILE_PATH, 'r') as users_file:
         users_data = json.load(users_file)
-        users_count = len(users_data)
+        return users_data
+        users_count = len(read_json)
 
     with open(RESULT_FILE_PATH, 'r') as result_file:
         result_data = json.load(result_file)
@@ -43,3 +43,5 @@ def test_result_file_struct():
         required_keys = ['name', 'gender', 'address', 'age', 'books']
         for dict in result_data:
             assert all(key in dict for key in required_keys)
+
+
